@@ -17,7 +17,7 @@ def get_requirements(file_path:str):
 
 setup(
     name='store_sales_prediction',
-    version='0.0.1',
+    version='0.0.0.2',
     author='Pravat Patra',
     author_email='pravatpatra1997@gmail.com',
     install_requires=get_requirements('requirements.txt'),
