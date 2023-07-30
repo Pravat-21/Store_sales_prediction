@@ -1,5 +1,7 @@
 import sys
 from dataclasses import dataclass
+import warnings
+warnings.filterwarnings('ignore')
 
 import numpy as np 
 import pandas as pd
