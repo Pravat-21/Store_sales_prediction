@@ -66,6 +66,7 @@ input#submit{
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 70px;
     margin-bottom: 20px;
     text-align: center;
     margin-left: 290px;
@@ -74,3 +75,16 @@ input#submit{
 
 }
 
+select#name{
+    width: 164px;
+    border: 1px solid #add;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: gainsboro;
+    box-shadow: inset 1px 1px 5px
+    rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color:rgba(0, 0, 0, 0.5) ;
+    
+}
