@@ -8,7 +8,7 @@
         <div class="main">
             <div class="register">
                 <h2>PREDICT HERE</h2>
-                <form id="register" method="post">
+                <form id="register" action="{{ url_for('predict_datapoint')}}" method="post">
 
                     <label>Item_Identifier</label>&nbsp;&nbsp;&nbsp;
                     <select id="name" class="form-control1" name="Item_Identifier" placeholder="Enter Item_Identifier" required>
@@ -38,12 +38,12 @@
                     &nbsp;&nbsp;
 
                     <label>Item_Weight</label>&nbsp;&nbsp;&nbsp;
-                    <input type="number" name="Item_Weight" id="name" placeholder="put Item_Weight">
+                    <input type="text" name="Item_Weight" id="name" placeholder="put Item_Weight">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <label>Item_Visibility</label>&nbsp;&nbsp;&nbsp;
-                    <input type="number" name="Item_Visibility" id="name" placeholder="put Item_Visibility"><br><br>
+                    <input type="text" name="Item_Visibility" id="name" placeholder="put Item_Visibility"><br><br>
 
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,12 +82,12 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <label>Item_MRP</label>&nbsp;&nbsp;&nbsp;
-                    <input type="number" name="Item_MRP" id="name" placeholder="put Item_MRP"><br><br>
+                    <input type="text" name="Item_MRP" id="name" placeholder="put Item_MRP"><br><br>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     
                     <label>Outlet_Age</label>&nbsp;&nbsp;&nbsp;
-                    <input type="number" name="Outlet_Age" id="name" placeholder="put Outlet_Age">
+                    <input type="text" name="Outlet_Age" id="name" placeholder="put Outlet_Age">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -153,6 +153,7 @@
             </div>
 
         </div>
+    
     </body>
 
 </html>
