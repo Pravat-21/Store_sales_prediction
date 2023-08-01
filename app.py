@@ -1,8 +1,6 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,redirect
 import numpy as np
 import pandas as pd
-
-from sklearn.preprocessing import StandardScaler
 from src.pipeline.prediction_pipeline import CustomData,PredictPipeline
 
 application=Flask(__name__)
@@ -11,7 +9,7 @@ app=application
 
 ## Route for a home page
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def index():
     return render_template('index.html') 
 
@@ -34,14 +32,19 @@ def predict_datapoint():
 
         )
         pred_df=data.get_data_as_data_frame()
-        print(pred_df)
-        print("Before Prediction")
+        #print(pred_df)
+        #print("Before Prediction")
+        table_html = pred_df.to_html(index=False)
 
         predict_pipeline=PredictPipeline()
-        print("Mid Prediction")
+        #print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
-        print("after Prediction")
-        return render_template('result.html',results=round(results[0],3))
+        #print("after Prediction")
+        return render_template('result.html',data_frame=table_html,results=round(results[0],3))
+    
+@app.route('/redirect',methods=['POST','GET'])
+def redirect11():
+    return redirect('/predictdata')
     
 
 if __name__=="__main__":

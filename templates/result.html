@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Prediction | Result</title>
-    </head>
-    <body>
-        <div class="main">
-            <h2>
-                predict result is {{results}}
-            </h2>
+<html>
+<head>
+    <title>Sales | Result</title>
+    <link rel="stylesheet" type="text/css" href="./static/style2.css">
+    
+</head>
+<body>
+    <div class="table-container">
+        <h1>SUMMARY OF YOUR INPUTS</h1>
+        {{ data_frame | safe }} <!-- Use "safe" filter to render the HTML as-is without escaping -->
+        <h2>YOUR PREDICTED SALES IS :</h2>
+        <h1>{{results}}</h1>
 
-        </div>
-    </body>
+        <form id="button" action="{{url_for('index')}}" method="post">
+            <input type="submit" name="submit" value="Home" id="submit">
+
+        </form>
+    </div>
+</body>
 </html>
