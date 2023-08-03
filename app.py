@@ -43,18 +43,6 @@ def predict_datapoint():
         #print("Mid Prediction")
         results=predict_pipeline.predict(pred_df)
         #print("after Prediction")
-        #insert all the data into my Cassandra Database:
-        Item_Identifier=str(request.form.get('Item_Identifier'))
-        Item_Weight=float(request.form.get('Item_Weight'))
-        Item_Fat_Content=str(request.form.get('Item_Fat_Content'))
-        Item_Visibility=float(request.form.get('Item_Visibility'))
-        Item_Type=str(request.form.get('Item_Type'))
-        Item_MRP=float(request.form.get('Item_MRP'))
-        Outlet_Age=float(request.form.get('Outlet_Age'))
-        Outlet_Size=str(request.form.get('Outlet_Size'))
-        Outlet_Location_Type=str(request.form.get('Outlet_Location_Type'))
-        Outlet_Type=str(request.form.get('Outlet_Type'))
-        obj=DatabaseConfig()
         return render_template('result.html',data_frame=table_html,results=round(results[0],3))
     
 @app.route('/redirect',methods=['POST','GET'])
