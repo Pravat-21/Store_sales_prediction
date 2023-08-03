@@ -1,6 +1,7 @@
 import os
 import sys
 import pickle
+import cassandra
 import numpy as np 
 import pandas as pd
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
@@ -68,5 +69,7 @@ def load_object(file_path):
     except Exception as e:
         logging.info('Exception Occured in load_object function utils')
         raise CustomException(e,sys)
+    
+
 
     

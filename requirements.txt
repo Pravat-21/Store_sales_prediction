@@ -6,4 +6,5 @@ scikit-learn
 seaborn
 xgboost
 flask
-#-e .
+cassandra-driver
+-e .
