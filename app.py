@@ -35,14 +35,12 @@ def predict_datapoint():
         )
         pred_df=data.get_data_as_data_frame()
         logging.info(pred_df)
-        #print(pred_df)
-        #print("Before Prediction")
         table_html = pred_df.to_html(index=False)
 
         predict_pipeline=PredictPipeline()
-        #print("Mid Prediction")
+        
         results=predict_pipeline.predict(pred_df)
-        #print("after Prediction")
+        
         return render_template('result.html',data_frame=table_html,results=round(results[0],3))
     
 @app.route('/redirect',methods=['POST','GET'])
